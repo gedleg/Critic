@@ -1,0 +1,124 @@
+Class Overview:
+
+Critic
+- Description: The "Critic" class serves as the hub for the administration of businesses, users, and reviews in a system similar to Yelp. It coordinates communications between customers and businesses.
+
+ Business
+- Description: The "Business" class refers to specific businesses that are listed on the site. It includes crucial information about a company, like its name, address, category, and related reviews. Users can evaluate and review companies.
+
+ User
+- Description: The customers of the Yelp-like system are represented by the "User" class. Users can engage with businesses and other users while also writing reviews and giving ratings.
+
+ Review
+- Description: The "Review" class is used for modeling customer reviews of companies. It includes details on the review's author, the business to which it applies, the creation date, the review's content, and its rating.
+
+ Category
+- Description: Business categories are represented by the "Category" class. It is in charge of placing businesses into distinct industry classifications or groups.
+
+ Location
+- Description: The "Location" class denotes physical locations linked to companies. Based on their physical addresses, it aids in grouping businesses.
+
+ Search
+- Description: The "Search" class indicates a service or element in charge of looking up and locating businesses using keywords, categories, and locations. It serves as an outlet for users to access business information.
+
+ Attributes:
+
+ Yelp Class Attributes:
+- "businesses: List<Business>"
+  - Description: A list containing references to all the businesses listed on the platform.
+- "users: List<User>"
+  - Description: A list containing references to all registered users of the system.
+- "reviews: List<Review>"
+  - Description: A list containing references to all user-generated reviews within the system.
+
+ Business Class Attributes:
+- "id: int"
+  - Description: A unique identifier for the business.
+- "name: string"
+  - Description: The name of the business.
+- "address: string"
+  - Description: The physical address of the business.
+- "category: string"
+  - Description: The category or industry type to which the business belongs.
+- "reviews: List<Review>"
+  - Description: A list containing references to all reviews associated with this business.
+
+ User Class Attributes:
+- "id: int"
+  - Description: A unique identifier for the user.
+- "username: string"
+  - Description: The username chosen by the user for their profile.
+- "email: string"
+  - Description: The email address associated with the user's account.
+- "password: string"
+  - Description: The user's password (Note: Passwords should typically be securely hashed in practice).
+- "reviews: List<Review>"
+  - Description: A list containing references to all reviews written by this user.
+
+ Review Class Attributes:
+- "id: int"
+  - Description: A unique identifier for the review.
+- "rating: int"
+  - Description: The numeric rating assigned to the business in the review.
+- "text: string"
+  - Description: The textual content of the review.
+- "user: User"
+  - Description: A reference to the user who wrote the review.
+- "business: Business"
+  - Description: A reference to the business being reviewed.
+- "createdDate: DateTime"
+  - Description: The date and time when the review was created.
+
+ Category Class Attributes:
+- "name: string"
+  - Description: The name of the business category.
+
+ Location Class Attributes:
+- "name: string"
+  - Description: The name of the geographical location.
+- "businesses: List<Business>"
+  - Description: A list containing references to businesses associated with this location.
+
+ Operations:
+
+ Yelp Class Operations:
+- "addBusiness(business: Business): void"
+  - Description: Adds a new business to the platform.
+- "removeBusiness(business: Business): void"
+  - Description: Removes a business from the platform.
+- "addUser(user: User): void"
+  - Description: Registers a new user on the platform.
+- "removeUser(user: User): void"
+  - Description: Removes a user's account from the platform.
+- "addReview(review: Review): void"
+  - Description: Allows a user to submit a review.
+- "removeReview(review: Review): void"
+  - Description: Removes a review from the platform.
+
+ Business Class Operations:
+- "getAverageRating(): double"
+  - Description: Calculates and returns the average rating based on the reviews associated with the business.
+- "addReview(review: Review): void"
+  - Description: Allows users to submit reviews for this business.
+- "removeReview(review: Review): void"
+  - Description: Removes a review associated with this business.
+
+ User Class Operations:
+- "writeReview(review: Review): void"
+  - Description: Enables a user to write and submit a review.
+- "deleteReview(review: Review): void"
+  - Description: Allows a user to delete a review they have previously written.
+
+ Review Class Operations:
+- "editReview(text: string): void"
+  - Description: Allows a user to edit the textual content of their review.
+
+ Category Class Operations:
+- "setName(name: string): void"
+  - Description: Sets the name of the category.
+
+ Location Class Operations:
+- "addBusiness(business: Business): void"
+  - Description: Associates a business with this location.
+- "removeBusiness(business: Business): void"
+  - Description: Disassoci
